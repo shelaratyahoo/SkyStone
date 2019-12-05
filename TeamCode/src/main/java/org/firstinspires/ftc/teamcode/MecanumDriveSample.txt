@@ -1,0 +1,17 @@
+
+/*
+What is a Mecanum Drive
+One of the more popular drive trains nowadays is the Mecanum Drive. It is a four motor drive with mecanum wheels. The reason teams choose to use this over different drive trains is that you can strafe with them without the need of omni wheels. While many think they are pretty complicated to setup, they actually aren’t.
+
+First, create four motor variables. Left Front, Left Back, Right Front, Right Back. Then, hardware map them.
+
+Create three variables, forward, turn and strafe. Make each variable a double equals to the controller joystick you want.
+
+How the mecanum drive strafes is that the opposite wheels go the same direction. So, we make each motor set to a series of additions and subtractions of these variables.
+*/
+
+
+        lF.setPower(forward + turn + strafe);
+        rF.setPower(forward - turn - strafe);
+        lB.setPower(forward + turn - strafe);
+        rB.setPower(forward - turn + strafe);
