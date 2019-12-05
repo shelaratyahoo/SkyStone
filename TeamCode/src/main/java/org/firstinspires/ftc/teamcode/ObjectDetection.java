@@ -41,7 +41,7 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
      * and paste it in to your code on the next line, between the double quotes.
      */
     private static final String VUFORIA_KEY =
-            " -- YOUR NEW VUFORIA KEY GOES HERE  --- ";
+            "Acosqqn/////AAABmfIYQdPwIU7AoMKFurxSuUAu9hSR2hHarwzeIX67gzKEQf1vVpRSqa9rX6aTS4K0oaP/rr6rMgwOGhwV3vCQw7p2ZwhC8t1AZ02bM3eEBE/KIqkuqUe5deszpscm2hCQETXUitQVtbfkmabu9fqee/SqV4zCz1KrY5KiLfZr+rrM2Cs3jsRN0dvni2gpk2G/P9YtE6ZW2hSBTVDQ2EICQKJJeE9CJGg7woMujtlQLGVw/H13PMGBXDpa6R632rk6E7CT3lxosZhO9Td7ISXIfzpOrXQE0HvyZUqsfiCuFm4KPcGq/ickixEKD4S0OiHaRm6te8xaZPn8myjbAsKx16GEDsT5eSs+ZMlC+NHCGCm3";
 
     /**
      * {@link #vuforia} is the variable we will use to store our instance of the Vuforia
@@ -92,11 +92,18 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
                       // step through the list of recognitions and display boundary info.
                       int i = 0;
                       for (Recognition recognition : updatedRecognitions) {
-                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                          recognition.getLeft(), recognition.getTop());
-                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                recognition.getRight(), recognition.getBottom());
+                      
+                          i++;
+                         
+                          if(recognition.getLabel() == "Skystone") {
+                          double midH = (recognition.getLeft()+recognition.getRight())/2;
+                          double midV = (recognition.getTop()=recognition.getBottom())/2;
+                              if (75) <= midH && midH <= 180 {
+                              // do this code,   left
+                              } else if (200 <= midH && midH <= 300 && 75 <= midV && midV <= 180) {
+                              // do this code,   center
+                              } else if (400 <= midH && midH <= 500 && 75 <= midV && midV <= 180 {
+                              // do this code right
                       }
                       telemetry.update();
                     }
