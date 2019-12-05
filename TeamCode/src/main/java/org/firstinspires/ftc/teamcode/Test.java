@@ -3,12 +3,15 @@ package org.firstinspires.ftc.teamcode;
 @Autonomus (name="Test")
 public class Test extends LinearOpMode
 {
- private DcMotor leftDrive, rightDrive;
+HardwareRobot robot = new HardwareRobot()
+
+
  double power = 0.5;
 
 @Override 
 public void run0pMode()
 {
+robot.init(hardwareMap)
 leftDrive = hardwareMap.get(DcMotor.class, "left_drive");
 rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
 
@@ -29,7 +32,7 @@ return power;
 
 
 public void drive(double power, double time) {
-leftDrive.setPower(.5);
-rightDrive.setPower(-.5);
+robot.leftDrive.setPower(.5);
+robot.rightDrive.setPower(-.5);
 sleep(time);
 }
